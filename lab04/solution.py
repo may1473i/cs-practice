@@ -51,4 +51,12 @@ def ranking(names: list[str], scores: list[float]) -> list[str]:
 # Возвращает имена тех, чей результат строго выше среднего. 
 # Порядок — как в списке
 def above_average(names: list[str], scores: list[float]) -> list[str]:
-    return
+    result = []
+
+    averageScore = average(scores)
+
+    for i in range(len(names)):
+        if scores[i] > averageScore:
+            result.append(names[i])
+    
+    return result
